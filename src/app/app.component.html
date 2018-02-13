@@ -1,0 +1,24 @@
+<div class="container">
+  <mat-toolbar>
+    <button mat-icon-button (click)="snav.toggle()">
+      <mat-icon>menu</mat-icon>
+    </button>
+    <h1 class="app-name">Responsive App</h1>
+  </mat-toolbar>
+
+  <mat-sidenav-container class="sidenav-container">
+    <mat-sidenav #snav class="sidenav">
+      <mat-nav-list>
+        <a href="" [routerLink]="['/content', {title:'coucou1'}]" mat-list-item>Test 1</a>
+        <a href="" [routerLink]="['/content', {title:'coucou2'}]" mat-list-item>Test 2</a>
+        <a href="" [routerLink]="['/content', {title:'coucou3'}]" mat-list-item>Test 3</a>
+      </mat-nav-list>
+    </mat-sidenav>
+    <mat-sidenav-content fxLayout="column" fxLayoutAlign="space-between">
+      <div class="content" fxLayout="row" fxFlex="1 0 auto" fxLayoutAlign="center center">
+        <router-outlet></router-outlet>
+      </div>
+      <div class="footer" fxLayout="row" fxLayoutAlign="center center"><h3 class="mat-h3">Footer</h3></div>
+    </mat-sidenav-content>
+  </mat-sidenav-container>
+</div>
